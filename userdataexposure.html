@@ -2,9 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="https://slack.com/api/signin.findWorkspaces">
+    <title>CSRF Test</title>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://slack.com/api/signin.findWorkspaces">click here</a>.</p>
+    <form action="https://slack.com/api/signin.findWorkspaces" method="POST">
+        <input type="hidden" name="fake_param" value="123">
+        <input type="submit" value="Click Here">
+    </form>
 </body>
 </html>
